@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Singh - Data Scientist</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Canvas Animation -->
+    <div class="canvas-container">
+        <canvas id="hero-lightpass"></canvas>
+    </div>
+
+    <!-- Frame Buffering Indicator -->
+    <div id="frame-loader" class="frame-loader glass">
+        <div class="loader-spinner"></div>
+        <span id="loader-text">Loading frames: <strong id="loader-pct">0%</strong></span>
+    </div>
+
+    <!-- Main Content Overlay -->
+    <div class="portfolio-container">
+
+        <!-- Navbar -->
+        <nav class="navbar glass">
+            <div class="nav-content container">
+                <a href="#" class="logo">
+                    <span class="code-icon">&lt;/&gt;</span> Prince Singh
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button type="button" onclick="openContactForm()" class="btn btn-primary" id="nav-get-in-touch">Get In
+                    Touch <i class="fa-solid fa-arrow-up-right"></i></button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero container">
+            <div class="hero-left">
+                <span class="badge glass">Data Scientist</span>
+                <h1>Hi, I'm <span class="highlight">Prince</span><br>I turn complex data into intelligent systems that
+                    learn, predict, and create impact.</h1>
+                <p>Data Scientist with a strong foundation in Python, Data Science, Machine Learning, Deep Learning, and
+                    Generative AI. Passionate about solving real-world problems through data-driven solutions.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work <i
+                            class="fa-solid fa-arrow-up-right"></i></a>
+                    <a href="cv/Prince_Data_Scientist.pdf" download="Prince_Data_Scientist.pdf"
+                        class="btn btn-outline glass">Download CV <i class="fa-solid fa-download"></i></a>
+                </div>
+                <div class="technologies">
+                    <span>TECHNOLOGIES I WORK WITH</span>
+                    <div class="tech-icons">
+                        <i class="fa-brands fa-python" style="color: #3776AB;" title="Python"></i>
+                        <i class="fa-solid fa-microchip" style="color: #FF6F00;" title="TensorFlow"></i>
+                        <i class="fa-solid fa-fire" style="color: #EE4C2C;" title="PyTorch"></i>
+                        <i class="fa-solid fa-language" style="color: #4CAF50;" title="NLP"></i>
+                        <i class="fa-solid fa-wand-magic-sparkles" style="color: #9C27B0;" title="Generative AI"></i>
+                        <i class="fa-solid fa-database" style="color: #4479A1;" title="Databases"></i>
+                        <i class="fa-brands fa-git-alt" style="color: #F05032;" title="Git"></i>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about container">
+            <div class="about-content glass theme-bordered">
+                <div class="about-left">
+                    <span class="section-subtitle glass theme-bordered boxed-subtitle">ABOUT ME</span>
+                    <h2>Passionate about<br>intelligent solutions</h2>
+                    <div class="about-text">
+                        <p class="qualification-line">➢ Data Scientist with an MCA in AI & ML from Galgotias
+                            University<span <br>
+                                <p>➢ Skilled in Data Analysis, Machine Learning, and Python.</p>
+                                <p>➢ Experienced in building end-to-end data-driven solutions.</p>
+                                <p>➢ Exploring Deep Learning and Generative AI.</p>
+                    </div>
+                    <a href="https://github.com/PrinceBuildsAI" class="btn btn-outline" target="_blank"
+                        rel="noopener noreferrer">
+                        Learn More About Me <i class="fa-regular fa-user"></i>
+                    </a>
+                </div>
+                <div class="about-right">
+                    <div class="stat-grid">
+                        <div class="stat-card" data-modal="modal-mca">
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>MCA</h3>
+                                <p>AI & ML </p>
+                            </div>
+                        </div>
+                        <div class="stat-card" data-modal="modal-certifications">
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>5+</h3>
+                                <p>Certifications</p>
+                            </div>
+                        </div>
+                        <div class="stat-card" id="projects-card">
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>5+</h3>
+                                <p>Major AI Projects</p>
+                            </div>
+                        </div>
+                        <div class="stat-card" id="skills-card">
+                            <div class="stat-icon">
+                                <i class="fa-solid fa-code-branch"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>10+</h3>
+                                <p>Tech Stack Skills</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills container">
+            <div class="section-header-wrapper center">
+                <span class="section-subtitle glass theme-bordered boxed-subtitle">TECHNICAL EXPERTISE</span>
+            </div>
+            <h2 class="center section-title">Building with Data, AI & Intelligent Systems</h2>
+            <div class="skills-cards-grid">
+                <!-- Card 1: Programming & Data -->
+                <div class="skill-card glass theme-bordered">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon"><i class="fa-brands fa-python" style="color:#3776AB"></i></div>
+                        <h3>Programming & Data</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Statistics</span>
+                        <span class="skill-tag">EDA</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Machine Learning & AI -->
+                <div class="skill-card glass theme-bordered">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon"><i class="fa-solid fa-brain" style="color:#61DAFB"></i></div>
+                        <h3>Machine Learning & AI</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">XGBoost</span>
+                        <span class="skill-tag">Feature Engineering</span>
+                        <span class="skill-tag">Model Optimization</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Deep Learning & NLP -->
+                <div class="skill-card glass theme-bordered">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon"><i class="fa-solid fa-network-wired" style="color:#EE4C2C"></i>
+                        </div>
+                        <h3>Deep Learning & NLP</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">NLP</span>
+                        <span class="skill-tag">Computer Vision</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Generative AI -->
+                <div class="skill-card glass theme-bordered">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon"><i class="fa-solid fa-wand-magic-sparkles"
+                                style="color:#9C27B0"></i></div>
+                        <h3>Generative AI</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">LLMs</span>
+                        <span class="skill-tag">Transformers</span>
+                        <span class="skill-tag">RAG</span>
+                        <span class="skill-tag">Fine-Tuning</span>
+                    </div>
+                </div>
+
+                <!-- Card 5: Analytics & BI -->
+                <div class="skill-card glass theme-bordered">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon"><i class="fa-solid fa-chart-pie" style="color:#4CAF50"></i></div>
+                        <h3>Analytics & BI</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Dashboards</span>
+                        <span class="skill-tag">Visualization</span>
+                    </div>
+                </div>
+
+                <!-- Card 6: Engineering & Deployment -->
+                <div class="skill-card glass theme-bordered">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon"><i class="fa-solid fa-gears" style="color:#009688"></i></div>
+                        <h3>Engineering & Deployment</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Streamlit</span>
+                    </div>
+                </div>
+
+                <!-- Card 7: Databases -->
+                <div class="skill-card glass theme-bordered">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon"><i class="fa-solid fa-database" style="color:#38BDF8"></i></div>
+                        <h3>Databases</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">SQLite</span>
+                        <span class="skill-tag">Vector DBs</span>
+                    </div>
+                </div>
+
+                <!-- Card 8: Tools & Environment -->
+                <div class="skill-card glass theme-bordered">
+                    <div class="skill-card-header">
+                        <div class="skill-card-icon"><i class="fa-solid fa-terminal" style="color:#F05032"></i></div>
+                        <h3>Tools & Environment</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Jupyter</span>
+                        <span class="skill-tag">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects container">
+            <div class="section-header-wrapper center">
+                <span class="section-subtitle glass theme-bordered boxed-subtitle">FEATURED PROJECTS</span>
+            </div>
+            <h2 class="center section-title">Some of My Recent Work</h2>
+            <div class="projects-carousel-wrapper">
+                <button class="carousel-nav-btn prev-btn" id="proj-prev-btn" aria-label="Previous Projects">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="project-grid" id="project-slider">
+                    <!-- Project 1: ASTRA -->
+                    <div class="project-card glass theme-bordered">
+                        <div class="project-img-wrapper">
+                            <span class="project-number">01</span>
+                            <img src="images/astra.jpg" alt="ASTRA AI Assistant">
+                        </div>
+                        <div class="project-info">
+                            <h3>ASTRA — AI Voice Assistant</h3>
+                            <p>AI-powered desktop assistant with 20+ commands, natural-language interaction, and face
+                                recognition using Python and OpenCV.</p>
+                            <div class="project-btn-grid">
+                                <a href="https://github.com/PrinceBuildsAI/ASTRA-A.I-Assistant" target="_blank"
+                                    rel="noopener noreferrer" class="btn-project btn-github">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                                <a href="https://www.youtube.com/@princebuildsaii" target="_blank"
+                                    rel="noopener noreferrer" class="btn-project btn-streamlit">
+                                    <i class="fa-solid fa-rocket"></i> Live App
+                                </a>
+                                <button class="btn-project btn-about" data-modal="modal-about-astra">
+                                    <i class="fa-solid fa-circle-info"></i> About Project
+                                </button>
+                                <button class="btn-project btn-spec" data-modal="modal-spec-astra">
+                                    <i class="fa-solid fa-sliders"></i> Specification
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Invoice Intelligence -->
+                    <div class="project-card glass theme-bordered">
+                        <div class="project-img-wrapper">
+                            <span class="project-number">02</span>
+                            <img src="images/invoice.png" alt="Invoice Intelligence">
+                        </div>
+                        <div class="project-info">
+                            <h3>Invoice Intelligence</h3>
+                            <p>AI-powered invoice analytics system using 5,000+ records for risk detection and
+                                freight cost prediction with Python, Scikit-learn, SQLite, and Streamlit.
+                            </p>
+                            <div class="project-btn-grid">
+                                <a href="https://github.com/PrinceBuildsAI/INVOICE-INTELLIGENCE-ML-PROJECT"
+                                    target="_blank" rel="noopener noreferrer" class="btn-project btn-github">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                                <a href="https://invoice-intelligence-ml-project-princebuildsai.streamlit.app/"
+                                    target="_blank" rel="noopener noreferrer" class="btn-project btn-streamlit">
+                                    <i class="fa-solid fa-rocket"></i> Live App
+                                </a>
+                                <button class="btn-project btn-about" data-modal="modal-about-invoice">
+                                    <i class="fa-solid fa-circle-info"></i> About Project
+                                </button>
+                                <button class="btn-project btn-spec" data-modal="modal-spec-invoice">
+                                    <i class="fa-solid fa-sliders"></i> Specification
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Customer Churn Prediction -->
+                    <div class="project-card glass theme-bordered">
+                        <div class="project-img-wrapper">
+                            <span class="project-number">03</span>
+                            <img src="images/churn.png" alt="Customer Churn Prediction">
+                        </div>
+                        <div class="project-info">
+                            <h3>Customer Churn Prediction</h3>
+                            <p>Machine learning model predicting bank customer attrition with 90%+ accuracy, feature
+                                importance analysis, and risk dashboard.</p>
+                            <div class="project-btn-grid">
+                                <a href="https://github.com/PrinceBuildsAI/BANK-CUSTOMER-CHURN-PREDICTION"
+                                    target="_blank" rel="noopener noreferrer" class="btn-project btn-github">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                                <a href="https://bank-customer-churn-prediction-princebuildsai.streamlit.app/"
+                                    target="_blank" rel="noopener noreferrer" class="btn-project btn-streamlit">
+                                    <i class="fa-solid fa-rocket"></i> Live App
+                                </a>
+                                <button class="btn-project btn-about" data-modal="modal-about-churn">
+                                    <i class="fa-solid fa-circle-info"></i> About Project
+                                </button>
+                                <button class="btn-project btn-spec" data-modal="modal-spec-churn">
+                                    <i class="fa-solid fa-sliders"></i> Specification
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Sentiment Analysis -->
+                    <div class="project-card glass theme-bordered">
+                        <div class="project-img-wrapper">
+                            <span class="project-number">04</span>
+                            <img src="images/sentiment.jpg" alt="Sentiment Analysis">
+                        </div>
+                        <div class="project-info">
+                            <h3>Sentiment Analysis</h3>
+                            <p>Deep Learning & NLP system analyzing 10,000+ customer reviews and feedback for sentiment
+                                classification, social sentiment analysis, and actionable customer insights in real
+                                time.
+
+                                .</p>
+                            <div class="project-btn-grid">
+                                <a href="https://github.com/PrinceBuildsAI/SENTIMENT-ANALYSIS-ML-PROJECT"
+                                    target="_blank" rel="noopener noreferrer" class="btn-project btn-github">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                                <a href="https://sentiment-analysis-princebuildsai.streamlit.app/" target="_blank"
+                                    rel="noopener noreferrer" class="btn-project btn-streamlit">
+                                    <i class="fa-solid fa-rocket"></i> Live App
+                                </a>
+                                <button class="btn-project btn-about" data-modal="modal-about-sentiment">
+                                    <i class="fa-solid fa-circle-info"></i> About Project
+                                </button>
+                                <button class="btn-project btn-spec" data-modal="modal-spec-sentiment">
+                                    <i class="fa-solid fa-sliders"></i> Specification
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Heart Health Prediction -->
+                    <div class="project-card glass theme-bordered">
+                        <div class="project-img-wrapper">
+                            <span class="project-number">05</span>
+                            <img src="images/heart-health.png" alt="Heart Health Prediction">
+                        </div>
+                        <div class="project-info">
+                            <h3>Heart Health Prediction</h3>
+                            <p>ML-based heart disease risk prediction system trained on 10,000+ healthcare records using
+                                multiple health and lifestyle factors with real-time predictions.</p>
+                            <div class="project-btn-grid">
+                                <a href="https://github.com/PrinceBuildsAI/HEART-HEALTH-PREDICTION" target="_blank"
+                                    rel="noopener noreferrer" class="btn-project btn-github">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                                <a href="https://heart-health-prediction-princebuildsai.streamlit.app/" target="_blank"
+                                    rel="noopener noreferrer" class="btn-project btn-streamlit">
+                                    <i class="fa-solid fa-rocket"></i> Live App
+                                </a>
+                                <button class="btn-project btn-about" data-modal="modal-about-heart">
+                                    <i class="fa-solid fa-circle-info"></i> About Project
+                                </button>
+                                <button class="btn-project btn-spec" data-modal="modal-spec-heart">
+                                    <i class="fa-solid fa-sliders"></i> Specification
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: Echo Site -->
+                    <div class="project-card glass theme-bordered">
+                        <div class="project-img-wrapper">
+                            <span class="project-number">06</span>
+                            <img src="images/echo-site.png" alt="Echo Site">
+                        </div>
+                        <div class="project-info">
+                            <h3>Echo Site — Blind Alphabet Trainer</h3>
+                            <p>Voice-based blind alphabet typing trainer with real-time audio feedback, accuracy
+                                monitoring, streak tracking, and exportable performance data.</p>
+                            <div class="project-btn-grid">
+                                <a href="https://github.com/PrinceBuildsAI/ECHO-SITE" target="_blank"
+                                    rel="noopener noreferrer" class="btn-project btn-github">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                                <a href="https://princebuildsai.github.io/ECHO-SITE/" target="_blank"
+                                    rel="noopener noreferrer" class="btn-project btn-streamlit">
+                                    <i class="fa-solid fa-rocket"></i> Live App
+                                </a>
+                                <button class="btn-project btn-about" data-modal="modal-about-echo">
+                                    <i class="fa-solid fa-circle-info"></i> About Project
+                                </button>
+                                <button class="btn-project btn-spec" data-modal="modal-spec-echo">
+                                    <i class="fa-solid fa-sliders"></i> Specification
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav-btn next-btn" id="proj-next-btn" aria-label="Next Projects">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Project Theory & Specification Modal System -->
+        <div id="project-modal" class="modal-overlay">
+            <div class="modal-card glass theme-bordered">
+                <button class="modal-close" id="modal-close-btn">&times;</button>
+                <div id="modal-content-body"></div>
+            </div>
+        </div>
+
+        <!-- Footer / Contact Section -->
+        <footer id="contact" class="footer container">
+            <div class="footer-grid">
+                <div class="footer-cta">
+                    <span class="section-subtitle glass theme-bordered boxed-subtitle">LET'S WORK TOGETHER</span>
+                    <h2>Have a project in mind?</h2>
+                    <p>
+                        • Open to exciting new projects.<br>
+                        • Turning data into intelligent solutions.<br>
+                        • Let's build something impactful together.
+                    </p>
+                    <button type="button" class="btn btn-primary" onclick="openContactForm()">
+                        Connect With Me <i class="fa-solid fa-arrow-up-right"></i>
+                    </button>
+                </div>
+                <div class="footer-social">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=singhprince8118@gmail.com&su=Let's%20Connect%20%E2%80%93%20Professional%20Opportunity&body=Hello%20Prince%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect%20with%20you.%0A%0AI%20would%20be%20happy%20to%20discuss%20a%20potential%20opportunity%2C%20project%2C%20or%20collaboration.%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D"
+                        target="_blank" rel="noopener noreferrer">
+                        
+                        <span class="section-subtitle glass theme-bordered boxed-subtitle">
+                            
+
+                            
+                            CONNECT WITH ME
+                        </span>
+                    
+
+                    </a>
+
+
+
+
+                    <div class="social-icons">
+                        <a href="https://github.com/PrinceBuildsAI" target="_blank" rel="noopener noreferrer"
+                            class="glass github" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com/in/singh-prince8118" target="_blank" rel="noopener noreferrer"
+                            class="glass linkedin" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@princebuildsaii" target="_blank" rel="noopener noreferrer"
+                            class="glass youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/princebuildsai/" target="_blank" rel="noopener noreferrer"
+                            class="glass instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <div class="contact-info">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=singhprince8118%40gmail.com&su=Hiring+Inquiry&body=Hi+Prince%2C%0A%0AI%E2%80%99d+like+to+connect+with+you+regarding+a+potential+career+opportunity+and+discuss+a+role+that+may+be+a+good+fit+for+your+profile.&utm_source=chatgpt.com"
+                            target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-envelope"></i>
+                            singhprince8118@gmail.com</a>
+                        <a href="tel:+919027044496"><i class="fa-solid fa-phone"></i> +91 9027044496</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Prince Singh. All rights reserved.</p>
+                <p>Built with <i class="fa-solid fa-heart" style="color: #e25555;"></i> by Prince</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- ===== Custom Contact Form Modal ===== -->
+    <div id="contact-form-modal" class="cf-overlay" role="dialog" aria-modal="true" aria-labelledby="cf-modal-title">
+        <div class="cf-card glass">
+            <!-- Close Button -->
+            <button class="cf-close" id="cf-close-btn" aria-label="Close contact form">&times;</button>
+
+            <!-- Header -->
+            <div class="cf-header">
+                <div class="cf-header-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                <div>
+                    <h2 id="cf-modal-title">Let's Connect</h2>
+                    <p>Fill in the details below and I'll get back to you soon.</p>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <form id="contact-form" novalidate autocomplete="off">
+
+                <!-- Row 1: Name + Email -->
+                <div class="cf-row">
+                    <div class="cf-field" id="cf-field-name">
+                        <label for="cf-name">Name <span class="cf-req">*</span></label>
+                        <input type="text" id="cf-name" name="entry.2005620554" placeholder="Your full name" required>
+                        <span class="cf-err" id="cf-name-err"></span>
+                    </div>
+                    <div class="cf-field" id="cf-field-email">
+                        <label for="cf-email">Email <span class="cf-req">*</span></label>
+                        <input type="email" id="cf-email" name="entry.1045781291" placeholder="you@example.com"
+                            required>
+                        <span class="cf-err" id="cf-email-err"></span>
+                    </div>
+                </div>
+
+                <!-- Row 2: Phone + Company -->
+                <div class="cf-row">
+                    <div class="cf-field">
+                        <label for="cf-phone">Phone Number</label>
+                        <input type="tel" id="cf-phone" name="entry.1166974658" placeholder="+91 00000 00000">
+                    </div>
+                    <div class="cf-field">
+                        <label for="cf-company">Company / Organization</label>
+                        <input type="text" id="cf-company" name="entry.267083711" placeholder="Your company name">
+                    </div>
+                </div>
+
+                <!-- Row 3: Role + Discuss -->
+                <div class="cf-row">
+                    <div class="cf-field">
+                        <label for="cf-role">Role / Designation</label>
+                        <select id="cf-role" name="entry.896273472">
+                            <option value="" disabled selected>Select your role</option>
+                            <option value="Recruiter">Recruiter</option>
+                            <option value="HR">HR</option>
+                            <option value="Founder">Founder</option>
+                            <option value="Student">Student</option>
+                            <option value="Developer">Developer</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="cf-field">
+                        <label for="cf-discuss">What would you like to discuss?</label>
+                        <select id="cf-discuss" name="entry.653703380">
+                            <option value="" disabled selected>Select a topic</option>
+                            <option value="Job Opportunity">Job Opportunity</option>
+                            <option value="Freelance / Project">Freelance / Project</option>
+                            <option value="Collaboration">Collaboration</option>
+                            <option value="Internship">Internship</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Message -->
+                <div class="cf-field">
+                    <label for="cf-message">Tell me about your opportunity / Message</label>
+                    <textarea id="cf-message" name="entry.805918459" rows="4"
+                        placeholder="Please feel free to share more details about your idea or requirements."></textarea>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="cf-submit btn btn-primary" id="cf-submit-btn">
+                    <span id="cf-btn-text"><i class="fa-solid fa-paper-plane"></i> Send Message</span>
+                    <span id="cf-btn-loading" style="display:none;"><i class="fa-solid fa-spinner fa-spin"></i>
+                        Sending...</span>
+                </button>
+
+            </form>
+
+            <!-- Success State -->
+            <div class="cf-success" id="cf-success" style="display:none;">
+                <div class="cf-success-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <h3>Message Sent Successfully!</h3>
+                <p>Thank you for reaching out. I'll get back to you soon.</p>
+                <button class="btn btn-outline glass" id="cf-send-another">Send Another Message</button>
+            </div>
+
+            <!-- Error Banner -->
+            <div class="cf-error-banner" id="cf-error-banner" style="display:none;">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span id="cf-error-text">Something went wrong. Please try again.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lenis Smooth Scroll CDN -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
